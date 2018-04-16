@@ -58,6 +58,14 @@ class Post extends Model
 
             return rtrim($data,',');
         }
+    }
 
+    /**
+     * Get total attached categories
+     *
+     */
+    public function getTotalCategoriesCount()
+    {
+        return $this->categories()->count();
     }
 }

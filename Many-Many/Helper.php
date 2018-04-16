@@ -1,28 +1,14 @@
 <?php
 
-// Add or update meta
-function update_postmeta($key='', $value, $post_obj)
-{
-    $value = trim($value);
+// Assign categories
+$categories = [ 'Laravel', 'Helpers', 'Ali' 'Raza' ];
+// $categories = $request->categories; // get from Request
 
-    if( '' == $value ){
-        return false;
-    }
+// Attach one category
+$post->assignCategory($category);
 
-    if( ! is_object($post_obj) ){
-        return false;
-    }
+// Remove One Category
+$post->removeCategory($categories);
 
-    $post = $post_obj;
-
-    PostMeta::where('post_id', '=', $post->id )->where('key', '=', $key )->delete();
-
-    $post_meta = new PostMeta([
-        'key' => $key,
-        'value' => ( '' != $value ) ? $value : '',
-    ]);
-
-    $post_meta->post()->associate($post);
-
-    $post_meta->save();
-}
+// Update Categories
+$post->updateCategories($categories);

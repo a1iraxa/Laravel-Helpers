@@ -29,4 +29,14 @@ class Category extends Model
     {
         return $this->belongsTo(Post::class);
     }
+
+
+    /**
+     * Get total attached post with category
+     *
+     */
+    public function getTotalPostsCount()
+    {
+        return $this->post()->count();
+    }
 }

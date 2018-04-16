@@ -110,4 +110,12 @@ class Post extends Model
     {
         return $this->hasMany(User::class, 'dedicated_to');
     }
+    /**
+     * Relationship with meta count
+     *
+     */
+    public function getTotalMeta()
+    {
+        return $this->meta()->count();
+    }
 }
