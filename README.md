@@ -1,5 +1,5 @@
 # Laravel-Helpers
-Laravel Relationships
+Laravel Relationships (Models, helpers)
 
 Global Helper Functions
 
