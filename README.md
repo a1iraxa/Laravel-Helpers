@@ -7,7 +7,7 @@ Global Helper Functions
 
 # Composer Init
 This will create composer.json file.
-composer init
+``` composer init ```
 
 # Composer Require Package-Author/Package-Name
 Will add new dependency in composer.json file.
